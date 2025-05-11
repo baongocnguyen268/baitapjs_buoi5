@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+<!-- Quản Lý Tuyển Sinh -->
+<div>
+  <input id="diemChuan" type="number" placeholder="Nhập điểm chuẩn"><br>
+  <input id="mon1" type="number" placeholder="Điểm môn 1"><br>
+  <input id="mon2" type="number" placeholder="Điểm môn 2"><br>
+  <input id="mon3" type="number" placeholder="Điểm môn 3"><br>
+
+  <select id="khuVuc">
+    <option value="X">Không ưu tiên khu vực</option>
+    <option value="A">Khu vực A</option>
+    <option value="B">Khu vực B</option>
+    <option value="C">Khu vực C</option>
+  </select><br>
+
+  <select id="doiTuong">
+    <option value="0">Không thuộc đối tượng ưu tiên</option>
+    <option value="1">Đối tượng 1</option>
+    <option value="2">Đối tượng 2</option>
+    <option value="3">Đối tượng 3</option>
+  </select><br>
+
+  <button id="btnCheck">Kiểm tra kết quả</button>
+
+  <div id="inKetQua"></div>
+</div>
+<hr />
+<!-- Tính Tiền Điện -->
+<div>
+  <input id="tenKH" type="text" placeholder="Nhập tên khách hàng"><br>
+  <input id="soKw" type="number" placeholder="Nhập số Kw tiêu thụ"><br>
+  <button id="btnTienDien">Tính tiền điện</button>
+  <div id="inTienDien"></div>
+</div>
+<hr />
+<!-- Tính Thuế Thu Nhập Cá Nhân -->
+<input id="hoTen" type="text" placeholder="Họ tên">
+<input id="thuNhapNam" type="number" placeholder="Tổng thu nhập năm ">
+<input id="soPhuThuoc" type="number" placeholder="Số người phụ thuộc">
+<button id="btnTinhThue">Tính thuế</button>
+<div id="ketQuaThue"></div>
+<hr />
+<!-- Tính tiền cáp -->
+<div>
+  <input id="maKH" type="text" placeholder="Mã khách hàng"><br>
+
+  <select id="loaiKH">
+    <option value="nhadan">Nhà dân</option>
+    <option value="doanhnghiep">Doanh nghiệp</option>
+  </select><br>
+
+  <input id="soKetNoi" type="number" placeholder="Số kết nối"><br>
+  <input id="soKenh" type="number" placeholder="Số kênh cao cấp"><br>
+
+  <button id="btnTinhTien">Tính tiền</button>
+
+  <div id="ketQua"></div>
+</div>
+
+<!-- <script src="./quanlytuyensinh.js"></script> -->
+<!-- <script src="./tinhtiendien.js"></script> -->
+<!-- <script src="./tinhthuethunhap.js"></script> -->
+<script src="./tinhtiencap.js"></script>
+</body>
+
+</html>
