@@ -12,25 +12,31 @@
  *
  */
 
-document.getElementById("btnTinhTien").onclick = function () {
-  const maKH = document.getElementById("maKH").value;
-  const loaiKH = document.getElementById("loaiKH").value;
-  const ketNoiInput = document.getElementById("soKetNoi");
-  const kenh = +document.getElementById("soKenh").value || 0;
+const loaiKH = document.getElementById("loaiKH");
+const ketNoiInput = document.getElementById("soKetNoi");
+ketNoiInput.style.display = "none";
+ketNoiInput.disabled = true;
 
-  let ketNoi = 0;
-  if (loaiKH === "doanhnghiep") {
-    ketNoi = +ketNoiInput.value || 0;
+loaiKH.addEventListener("change", function () {
+  if (this.value === "doanhnghiep") {
+    ketNoiInput.style.display = "block";
     ketNoiInput.disabled = false;
   } else {
-    ketNoi = 0;
+    ketNoiInput.style.display = "none";
     ketNoiInput.disabled = true;
     ketNoiInput.value = "";
   }
+});
+
+document.getElementById("btnTinhTien").onclick = function () {
+  const maKH = document.getElementById("maKH").value.trim();
+  const loai = loaiKH.value;
+  const ketNoi = +document.getElementById("soKetNoi").value || 0;
+  const kenh = +document.getElementById("soKenh").value || 0;
 
   let phiXuLy = 0, phiDichVu = 0, phiKenh = 0;
 
-  if (loaiKH === "nhadan") {
+  if (loai === "nhadan") {
     phiXuLy = 4.5;
     phiDichVu = 20.5;
     phiKenh = kenh * 7.5;
@@ -40,8 +46,8 @@ document.getElementById("btnTinhTien").onclick = function () {
     phiKenh = kenh * 50;
   }
 
-  let tong = phiXuLy + phiDichVu + phiKenh;
+  const tong = phiXuLy + phiDichVu + phiKenh;
 
   document.getElementById("ketQua").innerText =
-    ` Mã KH: ${maKH} Tổng tiền: $${tong}`;
+    `Mã KH: ${maKH} — Tổng tiền: $${tong}`;
 };
